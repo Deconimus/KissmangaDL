@@ -16,12 +16,12 @@ python kissmangadl.py "http://kissmanga.com/Manga/One-Piece" -o some/output/dire
 * PIP
 
 ### Installing dependancies:
-`pip install -r requirements.txt`
+`pip install -r requirements.txt` <br>
 [How to use PIP](https://www.makeuseof.com/tag/install-pip-for-python/)
 
 ### History:
 
-This is a fork from [pratikhit07's kissmanga-pdf-downloader](https://github.com/pratikhit07/kissmanga-pdf-downloader).
+This is a fork from [pratikhit07's kissmanga-pdf-downloader](https://github.com/pratikhit07/kissmanga-pdf-downloader). <br>
 The code was ported to Python 3. Changes and/or improvents are listed below:
 
 #### Changes:
