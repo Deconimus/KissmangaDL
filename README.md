@@ -25,6 +25,7 @@ This is a fork from [pratikhit07's kissmanga-pdf-downloader](https://github.com/
 The code was ported to Python 3. Changes and/or improvements are listed below:
 
 #### Changes:
+* Added support for Windows
 * Improved speed by concurrently downloading images
 * Saving chapters as PDF's is now optional
 * By default the script saves chapters as directories containing the pages as image files
