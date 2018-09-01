@@ -16,7 +16,9 @@ python kissmangadl.py "http://kissmanga.com/Manga/One-Piece" -o some/output/dire
 * PIP
 
 ### Installing dependencies:
-`pip install -r requirements.txt` <br>
+```
+pip install -r requirements.txt
+```
 [How to use PIP](https://www.makeuseof.com/tag/install-pip-for-python/)
 
 ### History:
