@@ -22,7 +22,7 @@ python kissmangadl.py "http://kissmanga.com/Manga/One-Piece" -o some/output/dire
 ### History:
 
 This is a fork from [pratikhit07's kissmanga-pdf-downloader](https://github.com/pratikhit07/kissmanga-pdf-downloader). <br>
-The code was ported to Python 3. Changes and/or improvents are listed below:
+The code was ported to Python 3. Changes and/or improvements are listed below:
 
 #### Changes:
 * Improved speed by concurrently downloading images
