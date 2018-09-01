@@ -1,24 +1,33 @@
-# kissmanga-pdf-downloader
-Download manga from kissmanga in pdf format.]
+## KissmangaDL
+Download manga from kissmanga and optionally save chapters as PDF files.
 
+### How to use:
+```python
+python kissmangadl.py "http://kissmanga.com/Manga/One-Piece" -o some/output/directory -pdf
+```
 
-## Requirements:
-python2 
+#### Options:
 
-pip
+`-o` sets the output directory. Default is `output/` inside kissmangadl's directory. <br>
+`-pdf` optional flag to save chapters as PDF files.
 
-## Installing dependancies:
-https://www.makeuseof.com/tag/install-pip-for-python/
-```bash
+### Requirements:
+* Python3
+* PIP
+
+### Installing dependencies:
+```
 pip install -r requirements.txt
 ```
+[How to use PIP](https://www.makeuseof.com/tag/install-pip-for-python/)
 
-## How to use script:
-```python
-python kissmanga_downloader.py "http://kissmanga.com/Manga/One-Piece"
-```
-## Output:
-Pdf will download chapter wise and stored in output directory.
+### History:
 
-## How it Works:
-Selenium is used to control a headless chrome browser running in background, in order to fetch html, and chapter wise image urls are retrieved. The images are then downloaded and converted in pdf. Currently it only supports kissmanga.com
+This is a fork from [pratikhit07's kissmanga-pdf-downloader](https://github.com/pratikhit07/kissmanga-pdf-downloader). <br>
+The code was ported to Python 3. Changes and/or improvements are listed below:
+
+#### Changes:
+* Added support for Windows
+* Improved speed by concurrently downloading images
+* Saving chapters as PDF's is now optional
+* By default the script saves chapters as directories containing the pages as image files
