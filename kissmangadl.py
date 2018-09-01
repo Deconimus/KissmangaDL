@@ -12,6 +12,8 @@ from selenium_helper import get_chapters_list_html, get_image_urls
 user_agent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 " \
 				+ "(KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
 
+path = os.path.dirname(os.path.realpath(__file__)).replace("\\", "/").strip()
+
 DOMAIN = 'http://kissmanga.com'
 
 
@@ -34,6 +36,7 @@ def get_chapters(manga_url):
 			"chapter_name": re.sub('[^\w\s-]', '', a_tag.get_text().strip().replace(':', " -")),
 			"link": DOMAIN + a_tag['href'] if not a_tag['href'].startswith(DOMAIN) else a_tag['href']
 		})
+		
 	return data
 
 
@@ -146,7 +149,7 @@ def main():
 							 		 usage='%(prog)s url [-o output_dir]')
 	
 	parser.add_argument('url', help='Manga url')
-	parser.add_argument("-o", default='output/', help="Output dir path")
+	parser.add_argument("-o", default=(path+'/output/'), help="Output dir path")
 	parser.add_argument("-pdf", action="store_true", help="Save chapters as PDF's.")
 	
 	args = parser.parse_args()

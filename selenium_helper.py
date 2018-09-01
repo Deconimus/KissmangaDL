@@ -14,11 +14,13 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--window-size=1920x1080")
 
+path = os.path.dirname(os.path.realpath(__file__)).replace("\\", "/").strip()
+
 chromedriver = ""
 if platform.system().lower().startswith("linux"):
-    chrome_driver = os.path.join(os.getcwd(), "chromedriver_linux64/chromedriver")
+    chrome_driver = path+"/chromedriver_linux64/chromedriver"
 elif platform.system().lower().startswith("windows"):
-    chrome_driver = os.path.join(os.getcwd(), "chromedriver_win32/chromedriver.exe")
+    chrome_driver = path+"/chromedriver_win32/chromedriver.exe"
     
 driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=chrome_driver)
 
