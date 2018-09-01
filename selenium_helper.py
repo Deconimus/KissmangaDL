@@ -1,5 +1,6 @@
 import os
 import codecs
+import platform
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -13,7 +14,12 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--window-size=1920x1080")
 
-chrome_driver = os.path.join(os.getcwd(), "chromedriver_linux64/chromedriver")
+chromedriver = ""
+if platform.system().lower().startswith("linux"):
+    chrome_driver = os.path.join(os.getcwd(), "chromedriver_linux64/chromedriver")
+elif platform.system().lower().startswith("windows"):
+    chrome_driver = os.path.join(os.getcwd(), "chromedriver_win32/chromedriver.exe")
+    
 driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=chrome_driver)
 
 delay = 30  # seconds
@@ -33,11 +39,11 @@ def get_chapters_list_html(url):
     write_debug_info('chapter_list1')
     try:
         WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.CLASS_NAME, 'listing')))
-        print "Page is ready!"
+        print("Page is ready!")
         write_debug_info('chapter_list2')
         return driver.page_source
     except TimeoutException:
-        print "Loading took too much time! -- listing"
+        print("Loading took too much time! -- listing")
 
 
 def get_image_urls(url):
@@ -48,5 +54,5 @@ def get_image_urls(url):
         write_debug_info('chapter_details2')
         return driver.execute_script("return lstImages")
     except TimeoutException:
-        print "Loading took too much time! -- divImage"
+        print("Loading took too much time! -- divImage")
     return []
